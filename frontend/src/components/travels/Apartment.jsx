@@ -23,13 +23,6 @@ export default function ApartmentsIndex() {
 
   return (
     <ApartmentContainer className="flex column gap-6 item-start">
-      {
-        <Message
-          showAlert={showAlert}
-          alertText={alertText}
-          alertType={alertType}
-        />
-      }
       <div className="apartmentWrapper w-90 py-6 auto">
         <div className="w-100 flex column gap-3 item-start">
           <div className="w-100 hidden">

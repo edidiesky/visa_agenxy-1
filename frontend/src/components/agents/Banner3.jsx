@@ -5,7 +5,7 @@ export default function Banner3() {
   return (
     <BannerTop className="position-relative">
       <img
-        src="img/page-header/page-header-background-transparent-2.jpg"
+        src="img/about_1.jpg"
         className="img-fluid position-absolute"
         alt=""
       />
@@ -14,14 +14,6 @@ export default function Banner3() {
           <h2 className="text-color-light font-weight-semibold">
             Meet our Team
           </h2>
-        </div>
-        <div className="col-md-12 align-self-center order-1">
-          <ul className="breadcrumb breadcrumb-light d-block text-center">
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li className="active">Pages</li>
-          </ul>
         </div>
       </div>
     </BannerTop>
@@ -53,7 +45,7 @@ const BannerTop = styled.div`
     z-index: 40;
     .text-center {
       h2 {
-        font-size: 6rem;
+        font-size: 6.5rem;
       }
     }
   }

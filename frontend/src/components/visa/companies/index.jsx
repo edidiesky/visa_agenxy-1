@@ -47,13 +47,6 @@ export default function CompaniesIndex() {
 
   return (
     <CompaniesIndexWrapper>
-      {
-        <Message
-          showAlert={showAlert}
-          alertText={alertText}
-          alertType={alertType}
-        />
-      }
       <div className="container">
         <OwlCarousel {...options}>
           {visa?.map((x, index) => {

@@ -32,10 +32,14 @@ export default function Right() {
               className="fs-16 family1 text-light text-dark"
               style={{ padding: "1rem 2rem", lineHeight: "2" }}
             >
-              Pay via PayPal; you can pay with your credit card if you don’t
-              have a PayPal account. SANDBOX ENABLED. You can use sandbox
-              testing accounts only. See the PayPal Sandbox Testing Guide for
-              more details.
+              Please provide all the necessary information in order for us to
+              process your visa application. We require this information to
+              ensure that your visa application meets the requirements of the
+              destination country. Please submit a completed visa application
+              form, a valid passport, and any other supporting documents
+              required by the destination country. Failure to provide all the
+              necessary information may result in the delay or rejection of your
+              visa application.
             </p>
           </div>
         </div>
@@ -80,7 +84,7 @@ export default function Right() {
                         {x.title}
                       </h6>
                       <h6 className="fs-18 text-light family1 text-dark">
-                        Country: Nigeria
+                        Country: {x.country}
                       </h6>
                     </div>
                   </div>

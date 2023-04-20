@@ -8,9 +8,11 @@ import {
   getSingleVisaDetails,
   getSingleinvestmentDetails,
 } from "../Features";
+import Message from "../components/loaders/Message";
 
 export default function Country() {
   const { id } = useParams();
+  const {showAlert, alertText, alertType} = useSelector(store=> store.bag)
   const dispatch = useDispatch();
   const { investmentDetails } = useSelector((store) => store.investment);
   const { visaDetails } = useSelector((store) => store.visa);
@@ -47,7 +49,15 @@ export default function Country() {
   };
 
   return (
+
     <CountryContent>
+       {
+        <Message
+          showAlert={showAlert}
+          alertText={alertText}
+          alertType={alertType}
+        />
+      }
       <div className="w-90 py-4 auto flex column gap-4">
         <h1 className="fs-64 text-light family1">
           Select Your Country
