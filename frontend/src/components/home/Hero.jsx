@@ -1,0 +1,199 @@
+import React from "react";
+import styled from "styled-components";
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
+
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+
+const HeroData = [
+  {
+    id: 1,
+    image: "img/travel-5219496_1920.jpg",
+    subtext: "Study / Work",
+    text: "Over 30 Countries",
+  },
+  {
+    id: 2,
+    image: "img/travel-5219496_1920.jpg",
+    subtext: "Visa Renewals ",
+    text: "Travel & Tourism",
+  },
+];
+const CustomPrev = ({ onClick }) => (
+  <button className="owl-prev" onClick={onClick}>
+    <BiChevronLeft />
+  </button>
+);
+const CustomNext = ({ onClick }) => (
+  <button className="owl-next" onClick={onClick}>
+    <BiChevronRight />
+  </button>
+);
+
+const options = {
+  nav: true,
+  items: 1,
+  autoplay: true,
+  navText: [<CustomPrev />, <CustomNext />],
+};
+
+export default function Hero() {
+  return (
+    <HeroContent>
+      <OwlCarousel className="owl-theme" {...options}>
+        {HeroData.map((x) => {
+          return (
+            <div className="HeroWrapper" key={x.id}>
+              <img src={x.image} alt="cart" className="imageWrapper" />
+              <header className="flex column gap-4 item-start">
+                <div className=" hidden">
+                  <h2
+                    className="text-white fs-30 text-bold"
+                    data-aos="fade-up"
+                    data-aos-duration="1100"
+                    data-aos-delay="200"
+                  >
+                    {x.subtext}
+                    <strong
+                      className="text2 block fs-40 text-white text-extra-bold"
+                      data-aos="fade-up"
+                      data-aos-duration="1100"
+                      data-aos-delay="400"
+                    >
+                      {x.text}
+                    </strong>
+                  </h2>
+                </div>
+                <div className=" hidden">
+                  <button
+                    className="btn py-2 px-3 capitalize"
+                    data-aos="fade-up"
+                    data-aos-duration="1100"
+                    data-aos-delay="700"
+                  >
+                    Get Started
+                  </button>
+                </div>
+              </header>
+              <div className="section1 w-100 flex item-center">
+                <div className="flex1">
+                  <h2 className="fs-20 text1 text-light flex-1">
+                    Searching for a <br /> Reliable Travel Agency ?
+                    <span className="block fs-14 text-white text-light pt-2">
+                      Let's help take care of your Travels and Visa
+                    </span>
+                  </h2>
+                  <div className="flex-1 flex item-center gap-4 jusify-end">
+                    <h3 className="text1 sidetext fs-16 text-light">
+                      <span className="block pb-1 fs-14 text-green text-bold">
+                        Call Us Now
+                      </span>
+                      +001 1230 45101
+                    </h3>
+                    <h3 className="text1 sidetext fs-16 text-light">
+                      <span className="block pb-1 fs-14 text-green text-bold">
+                        Email Us Now
+                      </span>
+                      [email protected]
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </OwlCarousel>
+    </HeroContent>
+  );
+}
+
+const HeroContent = styled.div`
+  width: 100%;
+  .text1 {
+    color: #fff;
+  }
+  .HeroWrapper {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    .section1 {
+      background-color: transparent;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 3rem 0;
+      position: absolute;
+      bottom: 0;
+      width: 80%;
+      transform: translateX(-50%);
+      left: 50%;
+      margin: 0 auto;
+      max-width:1160px;
+    }
+    header {
+      width: 85%;
+      margin: 0 auto;
+      max-width:1160px;
+    }
+    .imageWrapper {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      object-fit: cover;
+    }
+    header {
+      position: relative;
+      z-index: 50;
+      padding: 6rem 0;
+      @media (max-width: 1080px) {
+        padding-bottom: 0;
+      }
+      h2 {
+        font-size: 45px;
+        @media (max-width: 1080px) {
+          font-size: 20px;
+        }
+        .text2 {
+          font-size: 66px;
+          font-weight: 700;
+          @media (max-width: 1080px) {
+            font-size: 55px;
+          }
+        }
+      }
+    }
+  }
+  .flex1 {
+    display: flex;
+    align-items: center;
+    width: 87%;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 2rem;
+    @media (max-width: 780px) {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+  .sidetext {
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 3px;
+      border-radius: 30px;
+      height: 100%;
+      left: -9%;
+      top: 0;
+      background-color: var(--green);
+    }
+  }
+`;
+
+
+// fixed topbar
+// team navbar
+// image in interest
+// community standard screen and legal screen 

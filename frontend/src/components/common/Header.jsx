@@ -1,0 +1,449 @@
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { Link, NavLink } from "react-router-dom";
+import { FiShoppingCart } from "react-icons/fi";
+import { RxCross2 } from "react-icons/rx";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  calculateBagItem,
+  removeBagItem,
+  ToggleCartModal,
+  ToggleOrderModal,
+} from "../../Features";
+import Sidebar from "./Sidebar";
+const data = [
+  { id: 1, title: "Home", path: "" },
+  { id: 2, title: "Passport", path: "passport" },
+  { id: 3, title: "Visa", path: "visa" },
+  { id: 4, title: "Travel", path: "travels" },
+  { id: 5, title: "About", path: "about" },
+  { id: 6, title: "Agents", path: "agents" },
+  { id: 7, title: "Contact Us", path: "contact" },
+];
+
+export default function Header({ type }) {
+  const [active, setActive] = useState(false);
+  const dispatch = useDispatch();
+  const { totalPrice, showAlert, totalQuantity, bag } = useSelector(
+    (store) => store.bag
+  );
+
+  const isActive = () => {
+    window.scrollY > 1 ? setActive(true) : setActive(false);
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", isActive);
+    return () => {
+      window.removeEventListener("scroll", isActive);
+    };
+  }, []);
+
+  useEffect(() => {
+    dispatch(calculateBagItem());
+    if (showAlert) {
+      dispatch(calculateBagItem());
+    }
+  }, [showAlert]);
+
+  const HeaderTopLeft = () => {
+    if (type === "passport") {
+      return (
+        <div className="headerTopLeft">
+          <img
+            className="imageIcon"
+            src="img/logo.png"
+            alt="images"
+            style={{ height: "3rem" }}
+          />
+        </div>
+      );
+    }
+    return (
+      <div className="headerTopLeft">
+        <img className="imageIcon" src="/img/logo-footer.png" alt="images" />
+      </div>
+    );
+  };
+
+  const HeaderTopRight = () => {
+    return (
+      <div className="headerTopRight">
+        <div
+          className={
+            active ? "headerTopLeftWrapper " : "headerTopLeftWrapper active"
+          }
+        >
+          {data.map((x) => {
+            return (
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+                to={`/${x?.path}`}
+                key={x?.id}
+              >
+                {x?.title}
+              </NavLink>
+            );
+          })}
+        </div>
+        {bag.length > 0 && (
+          <div className="iconWrapper flex item-center">
+            <div className="icon">
+              <FiShoppingCart />
+            </div>
+            <div className="fs-12 notif text-bold text-blue">
+              {totalQuantity}
+            </div>
+            <div className="dropdown flex column gap-1">
+              <div className="dropdownCard">
+                {bag?.map((x) => {
+                  return (
+                    <div
+                      className="w-100 flex column gap-1 item-start"
+                      key={x?._id}
+                    >
+                      <div className="flex w-100 item-center gap-1">
+                        <div className="cartImage">
+                          <img src={x?.image} alt="" />
+                        </div>
+                        <h4 className="fs-16 uppercase text-blue text-extra-bold">
+                          {x?.title}
+                          <span className="block fs-16 text-light text-grey">
+                            ${x?.price}
+                          </span>
+                        </h4>
+                        <div
+                          className="icons"
+                          onClick={() => dispatch(removeBagItem(x))}
+                        >
+                          <RxCross2 />
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="py-2 subtotal">
+                <h5 className="fs-16 uppercase text-blue text-extra-bold">
+                  Subtotal: ${totalPrice}
+                </h5>
+              </div>
+              <div className="w-100 btnWrapper">
+                <Link to={"/cart"} className="cartBtn family1">
+                  View Cart
+                </Link>
+                <Link to={"/billing"} className="cartBtn family1">
+                  CHECKOUT
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  return (
+    <HeaderTopContainer className={active ? "active1" : ""}>
+      <div className="headerTopWrapperContainer w-80 auto">
+        <div className="headerTopWrapperContent">
+          <HeaderTopLeft />
+          {/* <div className="barWrapper">
+            <CgMenuRight />
+          </div> */}
+        </div>
+        <HeaderTopRight />
+      </div>
+    </HeaderTopContainer>
+  );
+}
+
+const HeaderTopContainer = styled.div`
+  height: 7rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  padding: 1rem 0;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  .px1 {
+    padding: 0 1rem;
+  }
+  .cartImage {
+    img {
+      width: 8rem;
+      height: 7rem;
+    }
+  }
+  .headerTopRight {
+    height: 100%;
+    .iconWrapper {
+      position: relative;
+      height: 100%;
+      .notif {
+        position: absolute;
+        right: -2%;
+        top: -7%;
+        width: 1.8rem;
+        height: 1.8rem;
+        border-radius: 50%;
+        background-color: var(--blue-1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 0.8rem;
+      }
+      &:hover {
+        .dropdown {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      .dropdown {
+        position: absolute;
+        min-width: 320px;
+        min-height: 140px;
+        padding: 1.5rem 0;
+        background-color: #fff;
+        bottom: -790%;
+        left: -500%;
+        opacity: 0;
+        transition: all 0.4s;
+        visibility: hidden;
+        border-radius: 6px;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.6);
+        @media (max-width: 780px) {
+          left: -700%;
+          min-width: 200px;
+        }
+        .btnWrapper {
+          display: flex;
+          align-items: center;
+          gap: 1.2rem;
+          padding: 0 1.2rem;
+          .cartBtn {
+            padding: 1rem 1rem;
+            background-color: var(--blue-2);
+            color: #fff;
+            flex: 1;
+            font-size: 1.2rem;
+            font-weight: 400;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 20px;
+            &:hover {
+              background: var(--red);
+            }
+          }
+        }
+        .subtotal {
+          padding: 0.5rem 1rem;
+          background-color: var(--grey-3);
+          h5 {
+            font-size: 10px;
+            font-weight: 600;
+            text-align: start;
+            flex: 1;
+            span {
+              font-size: 1rem;
+            }
+          }
+        }
+        h4 {
+          font-size: 14px;
+          font-weight: 600;
+          text-align: start;
+          flex: 1;
+          span {
+            font-size: 1.2rem;
+          }
+        }
+        .dropdownCard {
+          justify-content: space-between;
+          padding: 0 1rem;
+          height: 100px;
+          overflow-y: auto;
+          &::-webkit-scrollbar {
+            width: 5px;
+            height: 7px;
+            background: #8b8989;
+            border-radius: 10px;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+            transition: all 0.5s;
+            &:hover {
+              background: var(--secondary);
+            }
+          }
+          .icons {
+            width: 2rem;
+            height: 2rem;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: var(--grey-3);
+            svg {
+              width: 50%;
+              height: 50%;
+              color: var(--blue-2);
+            }
+          }
+        }
+      }
+      .icon {
+        width: 3rem;
+        height: 3rem;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        border-radius: 50%;
+        svg {
+          width: 70%;
+          height: 70%;
+          color: var(--blue-2);
+        }
+      }
+    }
+  }
+  &.active1 {
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    color: var(--green);
+    .headerTopWrapperContainer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .headerTopLeft {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        .imageIcon {
+          width: auto;
+        }
+      }
+      .headerTopRight {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        .headerTopLeftWrapper {
+          a {
+            color: var(--dark-1);
+          }
+          &.active {
+            a {
+              color: var(--blue-2);
+            }
+            .link {
+              font-size: 1.4rem;
+              color: #fff;
+            }
+          }
+          .link {
+            font-size: 1.4rem;
+            color: #f12529;
+          }
+        }
+      }
+    }
+  }
+  .headerTopWrapperContainer {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .headerTopRight {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .headerTopLeftWrapper {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        @media (max-width: 1080px) {
+          display: none;
+        }
+        .nav-link {
+          font-size: 1.2rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: var(--green);
+          transition: all 0.5s;
+          text-decoration: none;
+          position: relative;
+          &:hover::after {
+            width: 100%;
+          }
+          &:hover::before {
+            width: 100%;
+          }
+          &.active {
+            position: relative;
+            color: var(--green);
+            &::after {
+              content: "";
+              transition: all 0.4s;
+              width: 100%;
+              height: 3px;
+              bottom: -50%;
+              left: 0;
+              border-radius: 8px;
+              position: absolute;
+              background-color: var(--blue-2);
+            }
+            &::before {
+              content: "";
+              transition: all 0.4s;
+              width: 100%;
+              height: 3px;
+              top: -50%;
+              left: 0;
+              border-radius: 8px;
+              position: absolute;
+              background-color: var(--blue-2);
+            }
+          }
+          &::after {
+            content: "";
+            transition: all 0.4s;
+            width: 0%;
+            height: 3px;
+            bottom: -50%;
+            left: 0;
+            border-radius: 8px;
+            position: absolute;
+            background-color: var(--blue-2);
+          }
+          &::before {
+            content: "";
+            transition: all 0.4s;
+            width: 0%;
+            height: 3px;
+            top: -50%;
+            right: 0;
+            border-radius: 8px;
+            position: absolute;
+            background-color: var(--blue-2);
+          }
+        }
+      }
+    }
+  }
+  .headerTopLeft {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    .imageIcon {
+    }
+  }
+`;
