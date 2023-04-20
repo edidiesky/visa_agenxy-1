@@ -35,7 +35,7 @@ export default function App() {
           <Route path="visa" element={<Visa />} />
           <Route path="cart" element={<Cart />} />
           <Route path="billing" element={<Checkout />} />
-          <Route path="country/:id" element={<Country />} />
+          <Route exact path="country/:id" element={<Country />} />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>

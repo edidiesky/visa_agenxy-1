@@ -11,7 +11,12 @@ export default function CartContent() {
       style={{ border: "1px solid rgba(0,0,0,.1)", padding: "3rem" }}
     >
       {bag?.length === 0 ? (
-        <Message alertText="No items in your bag" alertType={"danger"} />
+         <h2
+         className="py-2 fs-40 text-bold text-dark"
+         style={{ borderBottom: "1px solid rgba(0,0,0,.1)" }}
+       >
+         You have no items in your cart
+       </h2>
       ) : (
         <>
           <h2
