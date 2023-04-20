@@ -8,9 +8,9 @@ export default function ContactIndex() {
       <Banner3 />
       <div className="grid">
         <div className="contactLeft">
-          <h4 className="fs-26 font-weight-bold">
+          <h4 className="fs-30 font-weight-bold">
             Contact Us
-            <span className="d-block">
+            <span className="d-block family1 fs-16 text-light">
               Feel free to ask for details, don't save any questions!
             </span>
           </h4>
@@ -126,7 +126,7 @@ const ContactIndexWrapper = styled.div`
   .contactRight {
     h5 {
       span {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         font-weight: 400;
         color: var(--grey-1);
         padding-top: 1.5rem;
@@ -162,8 +162,8 @@ const ContactIndexWrapper = styled.div`
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        font-size: 1.4rem;
-        font-weight: 400;
+        font-size: 1.6rem;
+        font-weight: 600;
         color: var(--dark-1);
 
         .searchArea {
@@ -175,7 +175,8 @@ const ContactIndexWrapper = styled.div`
           font-size: 1.6rem;
           transition: all 0.2s;
           font-family: "Montserrat", sans-serif;
-
+          color: var(--dark-1);
+          border-radius: 8px;
           &:focus {
             border: 1.5px solid rgba(0, 0, 0, 0.6);
           }
@@ -185,8 +186,9 @@ const ContactIndexWrapper = styled.div`
           outline: none;
           border: 1px solid rgba(0, 0, 0, 0.1);
           padding: 1.4rem 3rem;
-          font-size: 1.4rem;
+          font-size: 1.6rem;
           transition: all 0.2s;
+          border-radius: 8px;
 
           &:focus {
             border: 1.5px solid rgba(0, 0, 0, 0.6);

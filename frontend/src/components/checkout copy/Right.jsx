@@ -12,9 +12,14 @@ import styled from "styled-components";
 export default function Right() {
   const { orderModal } = useSelector((store) => store.modal);
   const dispatch = useDispatch();
-  const { totalPrice, TotalShoppingPrice, bag } = useSelector(
-    (store) => store.bag
-  );
+  const {
+    totalPrice,
+    TotalShoppingPrice,
+    bag,
+    totalQuantity,
+    shippingPrice,
+    estimatedTax,
+  } = useSelector((store) => store.bag);
   const { showAlert, paySuccess, payError, payLoading, url } = useSelector(
     (store) => store.pay
   );
@@ -99,13 +104,17 @@ export default function Right() {
       </div>
       <div className="flex center py-2">
         <div className="w-50 flex gap-2 column">
-          <h5 className="text-bold fs-16 text-dark w-100 flex item-center justify-space">
+          <h5 className="text-bold fs-18 text-light text-dark w-100 flex item-center justify-space">
             Subtotal
-            <span className="text-light">$45.00</span>
+            <span className="text-bold">${totalPrice}</span>
           </h5>
-          <h5 className="text-bold fs-16 text-dark w-100 flex item-center justify-space">
+          <h5 className="text-bold text-light fs-18 text-dark w-100 flex item-center justify-space">
+            Tax
+            <span className="text-bold">$30.00</span>
+          </h5>
+          <h5 className="text-bold text-light fs-18 text-dark w-100 flex item-center justify-space">
             Total
-            <span className="text-light">$45.00</span>
+            <span className="text-bold">${TotalShoppingPrice}</span>
           </h5>
         </div>
       </div>
