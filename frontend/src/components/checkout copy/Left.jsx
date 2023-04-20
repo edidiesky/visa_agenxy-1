@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import { Input } from "../forms";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -15,12 +15,9 @@ export default function Left() {
     firstname: "",
     lastname: "",
     email: "",
-    company: "",
     country: "",
     address: "",
-    city: "",
     phone: "",
-    postalCode: "",
   });
 
   const inputData = [
@@ -35,6 +32,7 @@ export default function Left() {
       required: true,
       pattern: "^[a-zA-Z]{3,}( {1,2}[a-zA-Z]{3,}){0,}$",
     },
+
     {
       id: 2,
       name: "lastname",
@@ -47,14 +45,13 @@ export default function Left() {
       pattern: "^[a-zA-Z]{3,}( {1,2}[a-zA-Z]{3,}){0,}$",
     },
     {
-      id: 3,
-      name: "company",
-      placeholder: "company name",
-      type: "text",
-      text: "Company Name",
-      errorMessage:
-        "lastname should be 3-16 characters and should not contain any special Character",
-      required: false,
+      id: 9,
+      name: "email",
+      placeholder: "example@site.com",
+      type: "email",
+      text: "Email",
+      errorMessage: "It should be a valid email",
+      required: true,
     },
     {
       id: 4,
@@ -96,25 +93,6 @@ export default function Left() {
       text: "phone",
       errorMessage:
         "phone should be 3-16 characters and should not contain any special Character",
-      required: true,
-    },
-    {
-      id: 8,
-      name: "postalCode",
-      placeholder: "postal Code",
-      type: "text",
-      text: "postal Code",
-      errorMessage:
-        "postal Code should be 3-16 characters and should not contain any special Character",
-      required: true,
-    },
-    {
-      id: 9,
-      name: "email",
-      placeholder: "example@site.com",
-      type: "email",
-      text: "Email",
-      errorMessage: "It should be a valid email",
       required: true,
     },
   ];
@@ -180,8 +158,11 @@ export default function Left() {
 
   return (
     <LeftWrapper className="flex column gap-2 radius2">
-      <h2 style={{fontSize:"38px"}}>Billing Details</h2>
-      <form className="formWrapper flex column gap-2" onSubmit={handleAddressDetails}>
+      <h2 style={{ fontSize: "38px" }}>Billing Details</h2>
+      <form
+        className="formWrapper flex column gap-2"
+        onSubmit={handleAddressDetails}
+      >
         <div className="inputWrapper flex column gap-2">
           {inputData.slice(0, 2).map((input) => {
             return (
@@ -234,7 +215,7 @@ const LeftWrapper = styled.div`
   background-color: #f8f5ef;
   padding: 4rem 3rem;
   width: 100%;
-  box-shadow: 0 2px 2px rgba(0,0,0,.3);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
 
   button {
     padding: 1.2rem 4rem;

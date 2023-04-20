@@ -29,7 +29,7 @@ export default function Right() {
         <div className="w-100 flex column gap-1">
           <div className="w-100 py-2">
             <p
-              className="fs-16 family1 text-light text-dark"
+              className="fs-18 family1 text-light text-dark"
               style={{ padding: "1rem 2rem", lineHeight: "2" }}
             >
               Please provide all the necessary information in order for us to

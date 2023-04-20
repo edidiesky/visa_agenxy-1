@@ -30,20 +30,21 @@ const LabelContainer = styled.label`
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
-  font-size: 1.4rem;
-  color: var(--grey-1);
-  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--dark-1);
+  font-weight: 600;
   text-transform: capitalize;
 
   input {
-    height: 4.5rem;
+    height: 5rem;
     background: #fff;
     padding: 0 2.4rem;
     width: 100%;
     border: 1px solid #ccc;
     outline: none;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 400;
+    border-radius: 7px;
     transition: all 0.2s;
     font-family: "Roboto Condensed", sans-serif;
     &:hover {
