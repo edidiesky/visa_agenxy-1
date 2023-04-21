@@ -12,7 +12,7 @@ import Message from "../components/loaders/Message";
 
 export default function Country() {
   const { id } = useParams();
-  const {showAlert, alertText, alertType} = useSelector(store=> store.bag)
+  const { showAlert, alertText, alertType } = useSelector((store) => store.bag);
   const dispatch = useDispatch();
   const { investmentDetails } = useSelector((store) => store.investment);
   const { visaDetails } = useSelector((store) => store.visa);
@@ -29,11 +29,13 @@ export default function Country() {
     title: visaDetails?.title,
     image: visaDetails?.image,
     price: visaDetails?.price,
+    _id: visaDetails?._id,
   };
   const investmentVisa = {
     title: investmentDetails?.title,
     image: investmentDetails?.image,
     price: investmentDetails?.price,
+    _id: investmentDetails?._id,
   };
 
   // console.log(investmentVisa, cartVisa);
@@ -49,9 +51,8 @@ export default function Country() {
   };
 
   return (
-
     <CountryContent>
-       {
+      {
         <Message
           showAlert={showAlert}
           alertText={alertText}

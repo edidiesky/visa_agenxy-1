@@ -40,7 +40,7 @@ const bagSlice = createSlice({
     addProductToCart: (state, action) => {
       // console.log(action);
       const bagPayload = action.payload;
-
+      console.log(bagPayload);
       // // find the product in the bag
       const isProductInBag = state.bag?.find((x) => x?._id === bagPayload?._id);
       // check for existence in the bag

@@ -102,6 +102,9 @@ const CompaniesIndexWrapper = styled.div`
     width: 100%;
     z-index: 10;
     background-color: #fff;
+    @media (max-width: 980px) {
+      display: none;
+    }
     button.owl-next {
       background-color: #fff;
       border-radius: 50%;
