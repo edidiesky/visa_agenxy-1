@@ -71,7 +71,8 @@ export const {
   onloader,
   offloader,
   ToggleSidebar,
-  offSidebar
+  offSidebar,
+  onSidebar
 } = toggleSlice.actions;
 
 export default toggleSlice.reducer;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
-import { CartSidebar, Footer, Header, Testimonials } from "../components/common";
+import { CartSidebar, Footer, Header, Sidebar, Testimonials } from "../components/common";
 
 
 
@@ -17,6 +17,7 @@ export default function Layout() {
   return (
     <LayoutContainer className="layout" style={{ height }}>
       <Outlet />
+      <Sidebar/>
       <Testimonials/>
       <Footer />  
       <Header type="passport" />

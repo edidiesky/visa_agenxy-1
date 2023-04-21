@@ -6,6 +6,7 @@ import {
   offloader,
   ToggleSidebar,
   offSidebar,
+  onSidebar
 } from "./toggle/toggleSlice";
 
 import {
@@ -86,5 +87,6 @@ export {
   adminDeleteinvestment,
   adminUpdateinvestment,
 
-  getCoinBaseUrl
+  getCoinBaseUrl,
+  onSidebar
 };

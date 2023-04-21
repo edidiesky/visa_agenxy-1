@@ -11,8 +11,8 @@ export default function Banner1index() {
         <div className="grid-1 grid-gap4 pt-5">
           {/* right start */}
           <div className="flexd">
-            <h2 className="font-weight-semibold text-center text-9 text-capitalize mb-2">
-              FAQ's
+            <h2 className="fs-45 font-weight-semibold text-center text-9 text-capitalize mb-2">
+            Frequently asked questions.
             </h2>
             <div className="divider divider-small mt-0 mb-4">
               <hr className="bg-primary" />
@@ -48,7 +48,7 @@ const BannerIWrapper = styled.div`
   h2 {
     font-family: "Sintony", sans-serif;
     font-weight: 400;
-    font-size: 3rem;
+    font-size: 6  rem;
   }
   h4 {
     font-family: "Sintony", sans-serif;

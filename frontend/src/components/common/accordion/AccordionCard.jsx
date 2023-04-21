@@ -48,9 +48,9 @@ const AccordionCardWrapper = styled.div`
       max-height: 28rem;
     }
     p {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       line-height: 1.6;
-      color:#959494;
+      color: #959494;
       font-weight: 400;
       width: 90%;
       padding: 2rem;
@@ -61,7 +61,7 @@ const AccordionCardWrapper = styled.div`
     display: flex;
     align-items: center;
     gap: 2rem;
-    padding:1rem 2rem;
+    padding: 1.5rem 3rem;
     &.active {
       background-color: var(--blue-2);
       .toggleBtn {
@@ -87,7 +87,7 @@ const AccordionCardWrapper = styled.div`
       }
     }
     h3 {
-      font-size: 1.6rem;
+      font-size: 2rem;
       width: 100%;
       font-weight: 600;
       color: var(--blue-2);

@@ -11,6 +11,7 @@ import {
   ToggleOrderModal,
 } from "../../Features";
 import Sidebar from "./Sidebar";
+import Bar from "./svg/Bar";
 const data = [
   { id: 1, title: "Home", path: "" },
   { id: 2, title: "Passport", path: "passport" },
@@ -147,13 +148,15 @@ export default function Header({ type }) {
   return (
     <HeaderTopContainer className={active ? "active1" : ""}>
       <div className="headerTopWrapperContainer w-80 auto">
-        <div className="headerTopWrapperContent">
+        <div className="headerTopWrapperContent flex item-center">
           <HeaderTopLeft />
-          {/* <div className="barWrapper">
-            <CgMenuRight />
-          </div> */}
         </div>
-        <HeaderTopRight />
+        <div className="flex item-center gap-2">
+          <HeaderTopRight />
+          <div className="flex item-center bars">
+            <Bar active1={active} />
+          </div>
+        </div>
       </div>
     </HeaderTopContainer>
   );
@@ -169,6 +172,11 @@ const HeaderTopContainer = styled.div`
   z-index: 1000;
   position: fixed;
   top: 0;
+  .bars {
+    @media (min-width:980px) {
+      display: none;
+    }
+  }
   .px1 {
     padding: 0 1rem;
   }

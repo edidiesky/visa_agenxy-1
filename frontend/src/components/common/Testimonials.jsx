@@ -27,24 +27,22 @@ const loggoData = [
   "/img/logo-brand-3.png",
   "/img/logo-brand-4.png",
   "/img/logo-brand-5.png",
-  "/img/logo-brand-6.png",
-  "/img/logo-brand-7.png",
-  "/img/logo-brand-8.png",
+  // "/img/logo-brand-6.png",
+  // "/img/logo-brand-7.png",
+  // "/img/logo-brand-8.png",
 ];
 
 export default function Testimonials() {
   return (
     <TestimonialsContent>
-      <div className="w-90 auto pt-4">
-        <OwlCarousel {...options}>
-          {loggoData.map((x) => {
-            return (
-              <div className="icon">
-                <img src={x} alt style={{ maxWidth: "90px" }} />
-              </div>
-            );
-          })}
-        </OwlCarousel>
+      <div className="container pt-4">
+        {loggoData.map((x) => {
+          return (
+            <div className="icon">
+              <img src={x} alt style={{ maxWidth: "90px" }} />
+            </div>
+          );
+        })}
       </div>
     </TestimonialsContent>
   );
@@ -52,19 +50,24 @@ export default function Testimonials() {
 
 const TestimonialsContent = styled.div`
   width: 100%;
-  padding: 6rem 0;
+  .container {
+    display: grid;
+    padding: 10rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-row-gap: 4rem;
     .icon {
-      width: 15rem;
-      height: 12rem;
+      height: 10rem;
+      width: 25rem;
+      max-width: 122px;
       &:hover {
-        filter: brightness(9);
+        filter: brightness(30%);
       }
       img {
         width: 100%;
         height: 100%;
-        filter: brightness(0.1);
+        filter: brightness(70%);
         transition: all 0.4s ease;
       }
-    
+    }
   }
 `;
