@@ -87,7 +87,7 @@ const AccordionCardWrapper = styled.div`
       }
     }
     h3 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       width: 100%;
       font-weight: 600;
       color: var(--blue-2);
