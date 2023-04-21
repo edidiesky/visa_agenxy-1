@@ -34,7 +34,7 @@ export default function MapIndex() {
         <OwlCarousel className="owl-theme" {...options}>
           {testimonialData.map((x) => {
             return (
-              <div className="w-100 flex item-start gap-2" key={x.id}>
+              <div className="w-100 flex Card item-start gap-2" key={x.id}>
                 <div className="imageWrapper item hidden">
                   <img
                     src={x.image}
@@ -111,6 +111,11 @@ const MapIndexWrapper = styled.div`
     display: flex;
     align-items: center;
     gap: 1rem;
+  }
+  .Card {
+    @media (max-width:680px) {
+      flex-direction: column;
+    }
   }
   .images {
     position: relative;

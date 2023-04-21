@@ -31,8 +31,8 @@ export default function Sidebar() {
                 <NavLink
                   className={({ isActive }) =>
                     isActive
-                      ? "nav-link fs-18  text-grey2 text-light text-bold active"
-                      : "nav-link fs-18  text-grey2 text-light text-bold"
+                      ? "nav-link fs-16  text-grey2 text-light text-bold active"
+                      : "nav-link fs-16  text-grey2 text-light text-bold"
                   }
                   to={`${x.path}`}
                   onClick={() => dispatch(offSidebar())}
@@ -71,8 +71,9 @@ const SidebarContainer = styled.div`
     left: 0%;
   }
   .nav-link {
-    padding: 1rem;
+    padding: 1rem 2rem;
     width: 100%;
+    font-weight: 600;
     border-bottom: 1px solid rgba(0, 0, 0, 0.09);
     &:hover {
       color: #333;
