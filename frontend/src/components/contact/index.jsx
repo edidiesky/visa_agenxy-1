@@ -185,7 +185,7 @@ const ContactIndexWrapper = styled.div`
           border: none;
           outline: none;
           border: 1px solid rgba(0, 0, 0, 0.1);
-          padding: 1.4rem 3rem;
+          padding: 2rem 3rem;
           font-size: 1.6rem;
           transition: all 0.2s;
           border-radius: 8px;

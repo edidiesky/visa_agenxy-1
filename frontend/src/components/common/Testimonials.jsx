@@ -1,42 +1,70 @@
 import React from "react";
 import styled from "styled-components";
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
+const options = {
+  items: 6,
+  autoplay: true,
+  margin: 10,
+  responsive: {
+    0: {
+      items: 2,
+    },
+    600: {
+      items: 3,
+    },
+    1000: {
+      items: 5,
+    },
+  },
+  // other configuration options
+};
+
+const loggoData = [
+  "/img/logo-brand-2.png",
+  "/img/logo-brand-1.png",
+  "/img/logo-brand-3.png",
+  "/img/logo-brand-4.png",
+  "/img/logo-brand-5.png",
+  "/img/logo-brand-6.png",
+  "/img/logo-brand-7.png",
+  "/img/logo-brand-8.png",
+];
 
 export default function Testimonials() {
   return (
     <TestimonialsContent>
-      <div className="container pt-4">
-					<div className="icon">
-						<img src="img/logos/logo-8.png" alt style={{maxWidth: "90px" }}/>
-					</div>
-					<div className="icon">
-						<img src="img/logos/logo-9.png" alt style={{maxWidth: "140px" }} />
-					</div>
-					<div className="icon">
-						<img src="img/logos/logo-10.png" alt style={{maxWidth: "140px" }} />
-					</div>
-					<div className="icon">
-						<img src="img/logos/logo-11.png" alt style={{maxWidth: "140px" }} />
-					</div>
-					<div className="icon">
-						<img src="img/logos/logo-12.png" alt style={{maxWidth: "100px" }} />
-					</div>
-					<div className="icon">
-						<img src="img/logos/logo-13.png" alt style={{maxWidth: "100px" }} />
-					</div>
-				</div>
+      <div className="w-90 auto pt-4">
+        <OwlCarousel {...options}>
+          {loggoData.map((x) => {
+            return (
+              <div className="icon">
+                <img src={x} alt style={{ maxWidth: "90px" }} />
+              </div>
+            );
+          })}
+        </OwlCarousel>
+      </div>
     </TestimonialsContent>
   );
 }
 
 const TestimonialsContent = styled.div`
-width: 100%;
-.container {
-  display: grid;
-  padding: 10rem 0;
-  grid-template-columns:repeat(auto-fit, minmax(130px, 1fr));
-  grid-row-gap: 8rem;
-  .icon {
-    flex: 1;
+  width: 100%;
+  padding: 6rem 0;
+    .icon {
+      width: 15rem;
+      height: 12rem;
+      &:hover {
+        filter: brightness(9);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        filter: brightness(0.1);
+        transition: all 0.4s ease;
+      }
+    
   }
-}
 `;

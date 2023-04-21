@@ -93,7 +93,7 @@ export default function Benefit() {
                   data-aos-delay={index * 300}
                 >
                   <Link
-                    to="demo-business-consulting-expertise-detail.html"
+                    to="/visa"
                     className="FeatureCardLink hidden text-decoration-none appear-animation"
                   >
                     <div
@@ -188,7 +188,7 @@ export default function Benefit() {
               <div className="w-100 hidden" style={{ padding: "1.5rem 2rem" }}>
                 <a
                   className="btn btn-outline hidden text-uppercase"
-                  href="demo-business-consulting-about-us.html"
+                  href="/visa"
                   data-aos="fade-up"
                   data-aos-duration="1100"
                   data-aos-delay="450"
