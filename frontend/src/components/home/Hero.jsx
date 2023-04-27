@@ -13,23 +13,9 @@ const HeroData = [
     subtext: "Study / Work",
     text: "Over 30 Countries",
   },
-  {
-    id: 2,
-    image: "img/travel-5219496_1920.jpg",
-    subtext: "Visa Renewals ",
-    text: "Travel & Tourism",
-  },
+
 ];
-const CustomPrev = ({ onClick }) => (
-  <button className="owl-prev" onClick={onClick}>
-    <BiChevronLeft />
-  </button>
-);
-const CustomNext = ({ onClick }) => (
-  <button className="owl-next" onClick={onClick}>
-    <BiChevronRight />
-  </button>
-);
+
 
 const options = {
   nav: true,
@@ -41,7 +27,6 @@ const options = {
 export default function Hero() {
   return (
     <HeroContent>
-      <OwlCarousel className="owl-theme" {...options}>
         {HeroData.map((x) => {
           return (
             <div className="HeroWrapper" key={x.id}>
@@ -67,7 +52,7 @@ export default function Hero() {
                 </div>
                 <div className=" hidden">
                   <button
-                    className="btn py-2 px-3 capitalize"
+                    className="btn capitalize"
                     data-aos="fade-up"
                     data-aos-duration="1100"
                     data-aos-delay="700"
@@ -103,7 +88,6 @@ export default function Hero() {
             </div>
           );
         })}
-      </OwlCarousel>
     </HeroContent>
   );
 }
@@ -112,6 +96,12 @@ const HeroContent = styled.div`
   width: 100%;
   .text1 {
     color: #fff;
+  }
+  .btn {
+    padding:2rem 3rem;
+    @media (max-width:680px) {
+      padding:1.7rem 3rem;
+    }
   }
   .HeroWrapper {
     min-height: 100vh;
@@ -129,6 +119,10 @@ const HeroContent = styled.div`
       left: 50%;
       margin: 0 auto;
       max-width:1160px;
+      @media (max-width:680px) {
+      padding:2rem 0;
+      width:90%;
+    }
     }
     header {
       width: 85%;
@@ -150,6 +144,9 @@ const HeroContent = styled.div`
       @media (max-width: 1080px) {
         padding-bottom: 0;
       }
+      @media (max-width: 480px) {
+         padding: 0;
+          }
       h2 {
         font-size: 45px;
         @media (max-width: 1080px) {
@@ -160,6 +157,12 @@ const HeroContent = styled.div`
           font-weight: 700;
           @media (max-width: 1080px) {
             font-size: 55px;
+          }
+          @media (max-width: 480px) {
+            font-size: 45px;
+          }
+          @media (max-width: 320px) {
+            font-size: 40px;
           }
         }
       }
