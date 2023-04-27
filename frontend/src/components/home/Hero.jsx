@@ -17,13 +17,6 @@ const HeroData = [
 ];
 
 
-const options = {
-  nav: true,
-  items: 1,
-  autoplay: true,
-  navText: [<CustomPrev />, <CustomNext />],
-};
-
 export default function Hero() {
   return (
     <HeroContent>

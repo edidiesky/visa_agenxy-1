@@ -1,0 +1,6 @@
+#!/bin/bash
+
+git add .
+git commit -m "`echo $RANDOM`"
+git push origin 
+git push hostinger
