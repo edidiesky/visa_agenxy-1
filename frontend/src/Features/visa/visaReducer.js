@@ -3,7 +3,7 @@ import axios from "axios";
 
 // fetching all Visa
 export const getAllVisa = createAsyncThunk(
-  "/fetch/allVisa",
+  "/get/allVisa",
   async (name, thunkAPI) => {
     try {
       // const { page, category, search, sort, color, limit } = thunkAPI.getState().Visa

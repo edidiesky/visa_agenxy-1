@@ -45,6 +45,7 @@ const visaSlice = createSlice({
     [getAllVisa.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.visa = action.payload;
+    
       state.showAlert = true;
       state.alertText = "All Visa has been successfully fetched";
     },
