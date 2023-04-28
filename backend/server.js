@@ -36,7 +36,7 @@ app.use(
 // console.log((path.join(__dirname, '/public/uploads')))
 
 mongoose.connect(
-  process.env.MONGDB_URI,
+  process.env.MONGODB_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
