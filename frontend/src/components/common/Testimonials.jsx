@@ -58,6 +58,7 @@ const TestimonialsContent = styled.div`
     grid-gap: 6rem;
     @media (max-width:780px) {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap:12rem;
     }
     .icon {
       height: 10rem;
