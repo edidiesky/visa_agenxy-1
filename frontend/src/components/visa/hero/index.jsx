@@ -90,7 +90,7 @@ const HeroContent = styled.div`
     background-color: rgba(0, 0, 0, 0.7);
   }
   .wrapper {
-    min-height: 100vh;
+    min-height: 70rem;
     position: relative;
     display: flex;
     align-items: center;

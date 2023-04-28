@@ -56,21 +56,21 @@ export default function Hero() {
               </header>
               <div className="section1 w-100 flex item-center">
                 <div className="flex1">
-                  <h2 className="fs-20 text1 text-light flex-1">
+                  <h2 className="fs-18 text1 text-light flex-1">
                     Searching for a <br /> Reliable Travel Agency ?
                     <span className="block fs-14 text-white text-light pt-2">
                       Let's help take care of your Travels and Visa
                     </span>
                   </h2>
                   <div className="flex-1 flex item-center gap-4 jusify-end">
-                    <h3 className="text1 sidetext fs-16 text-light">
-                      <span className="block pb-1 fs-14 text-green text-bold">
+                    <h3 className="text1 sidetext fs-14 text-light">
+                      <span className="block pb-1 fs-12 text-green text-bold">
                         Call Us Now
                       </span>
                       +001 1230 45101
                     </h3>
-                    <h3 className="text1 sidetext fs-16 text-light">
-                      <span className="block pb-1 fs-14 text-green text-bold">
+                    <h3 className="text1 sidetext fs-14 text-light">
+                      <span className="block pb-1 fs-12 text-green text-bold">
                         Email Us Now
                       </span>
                       [email protected]
@@ -97,7 +97,7 @@ const HeroContent = styled.div`
     }
   }
   .HeroWrapper {
-    min-height: 100vh;
+    min-height: 70rem;
     position: relative;
     display: flex;
     align-items: center;
@@ -107,7 +107,7 @@ const HeroContent = styled.div`
       padding: 3rem 0;
       position: absolute;
       bottom: 0;
-      width: 80%;
+      width: 85%;
       transform: translateX(-50%);
       left: 50%;
       margin: 0 auto;

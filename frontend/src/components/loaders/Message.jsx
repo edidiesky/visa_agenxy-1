@@ -59,6 +59,12 @@ const MessageContent = styled.div`
     font-size: 14px;
     align-items: center;
   }
+    @media (max-width: 480px) {
+    min-width: 250px;
+    justify-content: flex-start;
+    font-size: 14px;
+    align-items: center;
+  }
   .flex1 {
     flex: 1;
   }

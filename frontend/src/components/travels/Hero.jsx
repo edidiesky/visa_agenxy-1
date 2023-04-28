@@ -139,7 +139,7 @@ const HeroContent = styled.div`
     }
   }
   .HeroWrapper {
-    min-height: 100vh;
+    min-height: 70rem;
     position: relative;
     display: flex;
     align-items: center;
