@@ -130,6 +130,9 @@ const CountryContent = styled.div`
       background-color: #04173a9e;
       z-index: 300;
       padding: 3rem 1rem;
+            @media (max-width:780px) {
+        bottom:0;
+      }
     }
     .ImgWrapper {
       overflow: hidden;

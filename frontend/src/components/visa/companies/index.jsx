@@ -181,6 +181,9 @@ const CardWrapper = styled.div`
     background-color: #fff;
     z-index: 300;
     padding: 2rem 1rem;
+          @media (max-width:780px) {
+        bottom:0;
+      }
   }
   .ImgWrapper {
     overflow: hidden;
