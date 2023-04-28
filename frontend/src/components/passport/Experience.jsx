@@ -67,7 +67,7 @@ export default function Discover() {
           }}
         >
           <img
-            src="/img/passport/experience.jpg"
+            src="/img/Passport/experience.jpg"
             alt=""
             className="img-2"
             data-aos="zoom-in"

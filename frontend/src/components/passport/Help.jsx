@@ -97,7 +97,7 @@ export default function Discover() {
           }}
         >
           <img
-            src="/img/passport/helpingcustomersgettheredesired.jpg"
+            src="/img/Passport/helpingcustomersgettheredesired.jpg"
             alt=""
             className=" "
             data-aos="fade-left"
