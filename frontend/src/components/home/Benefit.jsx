@@ -119,7 +119,7 @@ export default function Benefit() {
             })}
           </div>
           <div className="row">
-            <div className="text-center hidden">
+            <div className="text-center "
               <button
                 className="btn btn1"
                 data-aos="fade-up "
@@ -146,7 +146,7 @@ export default function Benefit() {
                 data-aos-duration="1100"
                 data-aos-delay="250"
               >
-                Benifits Of Visa Online Coaching & Preparation
+                Benefits Of Visa Online Coaching & Preparation
               </h2>
             </div>
 
@@ -185,7 +185,7 @@ export default function Benefit() {
                   Real Estate Professionals
                 </li>
               </ul>
-              <div className="w-100 hidden" style={{ padding: "1.5rem 2rem" }}>
+              <div className="w-100" style={{ padding: "1.5rem 2rem" }}>
                 <a
                   className="btn btn-outline hidden text-uppercase"
                   href="/visa"

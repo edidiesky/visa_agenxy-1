@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from 'react-router-dom'
 
 export default function Discover() {
   return (
@@ -32,14 +33,15 @@ export default function Discover() {
           </div>
 
           <div className="w-100 hidden">
-            <button
+            <Link
+            to={'/visa'}
               className="btn-3 fs-16 text-green text-bold py-1"
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay="750"
             >
               Apply Now
-            </button>
+            </Link>
           </div>
         </div>
         <div

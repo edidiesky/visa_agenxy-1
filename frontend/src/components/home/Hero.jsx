@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from 'react-router-dom'
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
@@ -11,7 +12,7 @@ const HeroData = [
     id: 1,
     image: "img/travel-5219496_1920.jpg",
     subtext: "Study / Work",
-    text: "Over 30 Countries",
+    text: "Over 15  Countries",
   },
 
 ];
@@ -43,15 +44,16 @@ export default function Hero() {
                     </strong>
                   </h2>
                 </div>
-                <div className=" hidden">
-                  <button
+                <div className=" hidden py-2">
+                  <Link
+                  to={'/visa'}
                     className="btn capitalize"
                     data-aos="fade-up"
-                    data-aos-duration="1100"
+                    data-aos-duration="1100"    
                     data-aos-delay="700"
                   >
                     Get Started
-                  </button>
+                  </Link>
                 </div>
               </header>
               <div className="section1 w-100 flex item-center">

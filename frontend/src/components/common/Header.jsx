@@ -215,12 +215,12 @@ const HeaderTopContainer = styled.div`
       }
       .dropdown {
         position: absolute;
-        min-width: 320px;
+        min-width: 300px;
         min-height: 140px;
         padding: 1.5rem 0;
         background-color: #fff;
         bottom: -790%;
-        left: -500%;
+        left: -700%;
         opacity: 0;
         transition: all 0.4s;
         visibility: hidden;
