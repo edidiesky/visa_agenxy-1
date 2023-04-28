@@ -160,6 +160,9 @@ const CountryContent = styled.div`
   }
   h1 {
     font-size: 64px;
+    @media (max-width:680px) {
+      font-size:4.5rem;
+    }
   }
   .imageWrapper {
     height: 60vh;

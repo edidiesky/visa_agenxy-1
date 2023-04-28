@@ -60,7 +60,7 @@ const MessageContent = styled.div`
     align-items: center;
   }
     @media (max-width: 480px) {
-    min-width: 250px;
+    min-width: 300px;
     justify-content: flex-start;
     font-size: 14px;
     align-items: center;
