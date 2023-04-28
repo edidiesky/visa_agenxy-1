@@ -37,10 +37,7 @@ const options = {
 export default function CompaniesIndex() {
   const dispatch = useDispatch();
 
-  const [ data, setData ] = useState(null);
-
   const { visa } = useSelector((store) => store.visa);
-  setData(1);
   const { bag, showAlert, alertText, alertType } = useSelector(
     (store) => store.bag
   );
