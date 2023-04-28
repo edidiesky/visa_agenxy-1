@@ -56,14 +56,14 @@ export default function Header({ type }) {
             alt="images"
             style={{ height: "3rem" }}
           />*/}
-        <h4 className='fs-12 text-extra-bold text-green' style={{fontSIze:"16px",color:"var(--green)",fontWeight:'600'}}>DPASS</h4>
+        <h4 className='text-extra-bold text-green' style={{fontSIze:"16px",color:"var(--green)",fontWeight:'600'}}>DPASS</h4>
         </div>
       );
     }
     return (
       <div className="headerTopLeft">
         {/*<img className="imageIcon" src="/img/logo-footer.png" alt="images" />*/}
-      <h4 className='fs-12 text-extra-bold text-green' style={{fontSIze:"16px",color:"var(--green)",fontWeight:'600'}}>DPASS</h4>
+      <h4 className='text-extra-bold text-green' style={{fontSIze:"16px",color:"var(--green)",fontWeight:'600'}}>DPASS</h4>
       </div>
     );
   };
