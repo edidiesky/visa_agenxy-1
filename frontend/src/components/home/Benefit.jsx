@@ -119,7 +119,7 @@ export default function Benefit() {
             })}
           </div>
           <div className="row">
-            <div className="text-center "
+            <div className="text-center ">
               <button
                 className="btn btn1"
                 data-aos="fade-up "
