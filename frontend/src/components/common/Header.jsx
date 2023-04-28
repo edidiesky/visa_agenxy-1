@@ -49,7 +49,7 @@ export default function Header({ type }) {
   const HeaderTopLeft = () => {
     if (type === "passport") {
       return (
-        <div className="headerTopLeft">
+        <Link to={'/'} className="headerTopLeft">
           {/*<img
             className="imageIcon"
             src="img/logo.png"
@@ -57,14 +57,14 @@ export default function Header({ type }) {
             style={{ height: "3rem" }}
           />*/}
         <h4 className='text-extra-bold text-green' style={{fontSIze:"16px",color:"var(--green)",fontWeight:'600'}}>DPASS</h4>
-        </div>
+        </Link>
       );
     }
     return (
-      <div className="headerTopLeft">
+      <Link to={'/'} className="headerTopLeft">
         {/*<img className="imageIcon" src="/img/logo-footer.png" alt="images" />*/}
       <h4 className='text-extra-bold text-green' style={{fontSIze:"16px",color:"var(--green)",fontWeight:'600'}}>DPASS</h4>
-      </div>
+      </Link>
     );
   };
 
