@@ -37,13 +37,15 @@ const options = {
 export default function CompaniesIndex() {
   const dispatch = useDispatch();
 
-  const { visa } = useSelector((store) => store.visa);
+  
   const { bag, showAlert, alertText, alertType } = useSelector(
     (store) => store.bag
   );
   useEffect(() => {
     dispatch(getAllVisa());
-  }, []);
+  }, [dispatch]);
+
+  const { visa } = useSelector((store) => store.visa);
 
   return (
     <CompaniesIndexWrapper>
